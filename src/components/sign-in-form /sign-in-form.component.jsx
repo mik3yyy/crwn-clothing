@@ -1,11 +1,13 @@
 
-import { useState, useEffect } from "react";
+import { useState, useContext } from "react";
 import FormInput from "../form-input/form-input.component";
 import { createAuthUserWithEmailAndPassword , createUserDocumentFromAuth, signInWithGooglePopup , signInAuthUserWithEmailAndPassword} from "../../utils/firebase/firebase.utils";
 
 import "./sign-in-form.styles.scss"
 
 import Button from "../button/button.component";
+
+
 
 const defaulFormFields = {
     
@@ -19,8 +21,8 @@ const SignInForm = () => {
 
     const { email,password} = formFields;
 
+
     
-    console.log(formFields);
 
     function  resetFormField () {
         setFormFields (defaulFormFields)
@@ -37,7 +39,6 @@ const SignInForm = () => {
        
         try {
            const response= await signInAuthUserWithEmailAndPassword(email,password)
-           console.log(response);
         resetFormField(); 
 
         } catch(e) {
