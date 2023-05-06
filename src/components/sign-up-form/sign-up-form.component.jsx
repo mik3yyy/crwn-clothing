@@ -22,7 +22,7 @@ const SignUpForm = () => {
 
 
     
-    console.log("hit");
+
 
     function  resetFormField () {
         setFormFields (defaulFormFields)
